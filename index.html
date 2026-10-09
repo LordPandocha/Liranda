@@ -152,9 +152,115 @@
     @media (max-width:900px){.wrap{width:min(100% - 36px,700px)}.nav-links{gap:16px}.brand{min-width:auto}.hero{padding-top:54px;min-height:auto}.hero-grid{gap:15px;grid-template-columns:1fr .85fr}.hero h1{font-size:clamp(46px,7.5vw,72px)}.hero-art{min-height:390px}.proof-card,.program-card{padding:21px}.program-card h3{font-size:25px}.gallery-grid{grid-template-rows:190px 190px}.method-grid{gap:36px}}
     @media (max-width:700px){html{scroll-padding-top:72px}.wrap{width:calc(100% - 32px)}.nav{height:66px}.nav-links,.nav-actions .btn-quiet{display:none}.nav-actions .btn{min-height:36px;padding-inline:11px}.menu-toggle{display:grid;place-items:center}.mobile-panel{position:absolute;left:0;right:0;top:66px;padding:8px 16px 17px;background:rgba(8,8,10,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(20px)}.mobile-panel.open{display:grid;gap:0}.mobile-panel a{padding:14px 3px;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px;color:#c8c7d1}.mobile-panel a:last-child{border-bottom:0}.hero{padding:44px 0 55px}.hero-grid{grid-template-columns:1fr;gap:27px}.hero-copy{padding:0}.hero h1{font-size:clamp(48px,13vw,72px);margin-top:24px}.hero-lead{font-size:12px;max-width:400px}.hero-actions{margin-top:23px}.hero-actions .btn{flex:1;min-width:140px;font-size:10px;padding-inline:12px}.countdown{margin-top:18px}.hero-art{min-height:390px;max-width:520px;width:100%;margin-inline:auto}.hero-photo{inset:2% 9% 3% 10%}.ring{width:90%;left:5%}.art-label{left:1%;bottom:5%}.art-index{right:2%}.ticker-track{animation-duration:26s}section{padding:76px 0}.section-head{display:block;margin-bottom:28px}.section-head h2{font-size:clamp(38px,10vw,54px);margin-top:16px}.section-head p{margin-top:18px;font-size:11px}.proof-grid,.program-grid{grid-template-columns:1fr}.proof-card{min-height:190px}.proof-card h3{margin-top:22px}.program-card{min-height:unset;padding:25px}.program-card h3{margin-top:37px;font-size:31px}.program-card .program-desc{min-height:auto}.program-points{margin-bottom:25px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 170px 190px}.gallery-item:nth-child(1){grid-row:span 2}.gallery-item:nth-child(4){grid-column:span 2}.gallery-caption{left:12px;right:12px;bottom:13px}.gallery-caption strong{font-size:10px}.gallery-caption span{font-size:8px}.gallery-caption .view{font-size:17px}.method-grid{grid-template-columns:1fr;gap:28px}.method-side{position:static}.method-side h2{font-size:clamp(40px,10vw,56px)}.method-row{grid-template-columns:30px 1fr 18px;gap:12px;padding:20px 0}.method-row h3{font-size:16px}.cta-section{padding:30px 0 70px}.cta-panel{padding:30px 23px}.cta-panel h2{font-size:clamp(42px,11vw,60px)}.cta-actions .btn{width:100%;justify-content:space-between}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:18px}.footer-copy{font-size:9px}}
     @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+    .ambient{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;contain:strict;isolation:isolate;--geo-play:running}
+    .ambient::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(180deg,rgba(0,0,0,.7),transparent 88%);opacity:.45}
+    .ambient::after{content:"";position:absolute;inset:-35% -15%;background:linear-gradient(112deg,transparent 43%,rgba(168,85,247,.035) 49%,rgba(232,121,249,.07) 50%,transparent 56%);transform:translateX(-40%);animation:light-sweep 24s ease-in-out infinite;animation-play-state:var(--geo-play)}
+    .geo{position:absolute;display:block;will-change:transform;animation-play-state:var(--geo-play);pointer-events:none}
+    .geo-ring{width:min(39vw,470px);aspect-ratio:1;left:-13%;top:15%;border:1px solid rgba(196,181,253,.18);border-radius:50%;animation:slow-orbit 34s linear infinite}
+    .geo-ring::before,.geo-ring::after{content:"";position:absolute;inset:12%;border:1px solid rgba(232,121,249,.13);border-radius:50%;transform:rotate(35deg) scaleX(.55)}
+    .geo-ring::after{inset:27%;transform:rotate(-28deg) scaleX(1.2);border-color:rgba(196,181,253,.16)}
+    .geo-diamond{width:150px;height:150px;right:10%;top:18%;border:1px solid rgba(196,181,253,.18);transform:rotate(45deg);animation:float-diamond 17s ease-in-out infinite}
+    .geo-diamond::before{content:"";position:absolute;inset:22%;border:1px solid rgba(232,121,249,.25)}
+    .geo-triangle{width:0;height:0;right:27%;bottom:12%;border-left:85px solid transparent;border-right:85px solid transparent;border-bottom:148px solid rgba(139,92,246,.035);filter:drop-shadow(0 0 1px rgba(216,180,254,.3));animation:float-triangle 19s ease-in-out infinite}
+    .geo-orb{width:min(28vw,330px);aspect-ratio:1;left:40%;bottom:-12%;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.12),rgba(139,92,246,.025) 48%,transparent 72%);filter:blur(3px);animation:orb-pulse 12s ease-in-out infinite}
+    .geo-cross{width:100px;height:100px;right:5%;bottom:29%;opacity:.25;animation:slow-orbit 28s linear infinite reverse}
+    .geo-cross::before,.geo-cross::after{content:"";position:absolute;left:49%;top:0;width:1px;height:100%;background:linear-gradient(transparent,rgba(216,180,254,.5),transparent)}
+    .geo-cross::after{transform:rotate(90deg)}
+    .geo-line{left:55%;top:0;width:1px;height:38vh;background:linear-gradient(transparent,rgba(196,181,253,.2),transparent);transform:rotate(28deg);transform-origin:top;animation:line-drift 21s ease-in-out infinite}
+    .nav-shell,main,footer,.ticker{position:relative;z-index:1}
+    @keyframes slow-orbit{to{transform:rotate(360deg)}}
+    @keyframes float-diamond{0%,100%{translate:0 0;rotate:45deg}50%{translate:-12px 19px;rotate:58deg}}
+    @keyframes float-triangle{0%,100%{translate:0 0;rotate:0deg}50%{translate:15px -18px;rotate:12deg}}
+    @keyframes orb-pulse{0%,100%{transform:scale(.92);opacity:.55}50%{transform:scale(1.12);opacity:1}}
+    @keyframes line-drift{0%,100%{translate:0 -8%}50%{translate:22px 12%}}
+    @keyframes light-sweep{0%,100%{translate:-8% 0;opacity:.35}50%{translate:8% 0;opacity:.85}}
+
+    .eyebrow{font-size:11px}
+    .btn{font-size:13px}
+    .nav-links{font-size:12px}
+    .hero-lead{font-size:16px;line-height:1.8;max-width:490px;color:#b5b4c0}
+    .micro-note{font-size:12px;color:#92919e}
+    .section-head p{font-size:14px;color:#a3a2ad;max-width:350px}
+    .proof-card h3{font-size:23px}
+    .proof-card p{font-size:13px;line-height:1.75;color:#a4a3af}
+    .program-card .program-desc{font-size:13px;color:#a4a3af}
+    .program-points{font-size:12px;color:#d0cfda;gap:13px}
+    .gallery-caption strong{font-size:14px}
+    .gallery-caption span{font-size:11px;color:#c7c5d2}
+    .gallery-note{font-size:12px;color:#92919e}
+    .method-side p{font-size:14px;color:#a4a3af}
+    .method-row p{font-size:13px;color:#a3a2ae}
+    .cta-panel p{font-size:14px;line-height:1.85;color:#b1b0bb;max-width:450px}
+    .footer-copy{font-size:11px;color:#858491}
+    .footer-links{font-size:11px;color:#b6b5c0}
+
+    .hero-photo img{transform:translate3d(var(--img-x,0px),var(--img-y,0px),0) scale(1.01);will-change:transform}
+    .hero-art:hover .hero-photo img{transform:translate3d(var(--img-x,0px),var(--img-y,0px),0) scale(1.055)}
+    .proof-card,.program-card{transform-style:preserve-3d;transition:transform .42s cubic-bezier(.2,.75,.25,1),border-color .42s,box-shadow .42s,background .42s}
+    .proof-card:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-5px)}
+    .program-card:hover{transform:perspective(950px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-7px)}
+    .gallery-item img{will-change:transform}
+    .reveal{transform:translate3d(0,28px,0) scale(.99);transition:opacity .75s cubic-bezier(.2,.75,.25,1),transform .75s cubic-bezier(.2,.75,.25,1)}
+    .reveal.is-visible{transform:translate3d(0,0,0) scale(1)}
+    .countdown{position:relative;display:grid;grid-template-columns:minmax(120px,.7fr) 1fr;align-items:center;gap:14px 20px;max-width:560px;padding:16px 18px;margin-top:25px;border:1px solid rgba(196,181,253,.18);border-radius:7px;background:linear-gradient(125deg,rgba(139,92,246,.10),rgba(255,255,255,.025) 58%,rgba(217,70,239,.035));box-shadow:inset 0 1px rgba(255,255,255,.04),0 12px 45px rgba(0,0,0,.12);overflow:hidden}
+    .countdown::before{content:"";position:absolute;top:0;bottom:0;left:0;width:2px;background:linear-gradient(180deg,#e879f9,#8b5cf6,transparent);opacity:.8}
+    .countdown-top{display:grid;gap:8px}
+    .count-label{font:600 10px 'Space Grotesk',sans-serif;color:#a5a3b2;letter-spacing:.15em;text-transform:uppercase}
+    .count-date{font:600 12px 'Space Grotesk',sans-serif;color:#e9d5ff;letter-spacing:.08em}
+    .countdown-values{display:flex;justify-content:flex-end;align-items:stretch;gap:7px}
+    .count-box{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:46px;padding:7px 8px;border:1px solid rgba(255,255,255,.09);background:rgba(4,4,5,.35);border-radius:4px;font:600 18px 'Space Grotesk',sans-serif;color:#f7f4ff;font-variant-numeric:tabular-nums}
+    .count-box small{font:600 9px Manrope,sans-serif;color:#9693a4;letter-spacing:.05em;text-transform:uppercase}
+    .count-box.count-days{min-width:86px;padding:6px 12px;border-color:rgba(216,180,254,.32);background:linear-gradient(160deg,rgba(139,92,246,.18),rgba(217,70,239,.06));box-shadow:inset 0 0 22px rgba(139,92,246,.06)}
+    .count-days span{font-size:42px;line-height:.95;letter-spacing:-.07em;color:#fff;text-shadow:0 0 22px rgba(196,181,253,.3)}
+    .count-box.count-days small{color:#d8b4fe;font-size:9px;letter-spacing:.16em}
+
+    @media (max-width:900px){
+      .geo-ring{width:52vw;left:-23%}.geo-diamond{width:105px;height:105px;right:7%}
+      .geo-triangle{right:18%;border-left-width:58px;border-right-width:58px;border-bottom-width:101px}
+    }
+    @media (max-width:700px){
+      .ambient::before{background-size:38px 38px;opacity:.28}
+      .geo-ring{width:70vw;left:-42%;top:25%}.geo-diamond{width:68px;height:68px;right:2%;top:19%;opacity:.55}
+      .geo-triangle,.geo-cross,.geo-line{display:none}.geo-orb{width:55vw;left:35%;bottom:0;opacity:.65}
+      .ambient::after{animation-duration:35s;opacity:.5}
+      .hero-lead{font-size:14px;max-width:440px}
+      .countdown{grid-template-columns:1fr;gap:12px;margin-top:20px;padding:14px}
+      .countdown-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+      .countdown-values{justify-content:stretch;gap:6px}
+      .count-box{flex:1;min-width:0;font-size:16px;padding:8px 5px}
+      .count-box.count-days{flex:1.25;min-width:0}.count-days span{font-size:clamp(34px,10vw,42px)}
+      .count-box small{font-size:8px}
+      .section-head p{font-size:13px}
+      .proof-card h3{font-size:22px}.program-card .program-desc{font-size:13px}
+      .gallery-caption strong{font-size:12px}.gallery-caption span{font-size:10px}
+      .method-side p{font-size:13px}.method-row p{font-size:12px}
+      .footer-copy{font-size:10px}
+    }
+    @media (max-width:420px){
+      .hero h1{font-size:clamp(43px,12.7vw,58px)}
+      .hero-actions .btn{min-width:0;width:100%}
+      .countdown-values{gap:5px}.count-box{font-size:15px}.count-box small{font-size:7px}
+      .count-days span{font-size:34px}.count-label{font-size:9px}.count-date{font-size:10px}
+      .gallery-grid{grid-template-rows:190px 155px 170px}
+    }
+    @media (hover:none){
+      .proof-card:hover,.program-card:hover{transform:none;box-shadow:none}
+      .hero-art:hover .hero-photo img{transform:scale(1.01);filter:brightness(.8) saturate(.72)}
+      .gallery-item:hover img{transform:none;filter:brightness(.8) saturate(.78)}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .ambient .geo{display:none}
+      .reveal{opacity:1;transform:none}
+    }
   </style>
 </head>
 <body>
+  <div class="ambient" aria-hidden="true">
+    <span class="geo geo-ring"></span><span class="geo geo-diamond"></span>
+    <span class="geo geo-triangle"></span><span class="geo geo-orb"></span>
+    <span class="geo geo-cross"></span><span class="geo geo-line"></span>
+  </div>
   <header class="nav-shell">
     <div class="wrap nav">
       <a class="brand" href="#начало" aria-label="Татьяна Верг — на главную">
@@ -186,18 +292,20 @@
             <a class="btn btn-primary" href="#обучение">Выбрать обучение <span class="arrow">↗</span></a>
             <a class="btn btn-quiet" href="https://dikidi.net/99457" target="_blank" rel="noopener noreferrer">Записаться на услугу <span class="arrow">↗</span></a>
           </div>
-          <div class="countdown reveal delay-3" aria-label="До конца октября">
-            <span class="count-label">Ближайший поток · октябрь 2026</span>
-            <span class="count-box"><span id="days">00</span><small>дн</small></span>
-            <span class="count-box"><span id="hours">00</span><small>ч</small></span>
-            <span class="count-box"><span id="minutes">00</span><small>мин</small></span>
-            <span class="count-box"><span id="seconds">00</span><small>сек</small></span>
+          <div class="countdown reveal delay-3" aria-label="Обратный отсчёт до конца октября 2026">
+            <div class="countdown-top"><span class="count-label">Ближайший поток</span><span class="count-date">ОКТЯБРЬ 2026</span></div>
+            <div class="countdown-values">
+              <span class="count-box count-days"><span id="days">00</span><small>дней</small></span>
+              <span class="count-box"><span id="hours">00</span><small>час</small></span>
+              <span class="count-box"><span id="minutes">00</span><small>мин</small></span>
+              <span class="count-box"><span id="seconds">00</span><small>сек</small></span>
+            </div>
           </div>
           <div class="micro-note reveal delay-3"><span class="pulse"></span><span>Практика, разбор техники и решения для работы</span></div>
         </div>
         <div class="hero-art reveal delay-2" aria-label="Визуальный образ ногтевого сервиса">
           <div class="ring"></div>
-          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=85" alt="Макро-кадр маникюра и ногтевого покрытия" fetchpriority="high"></div>
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1100&q=82" alt="Макро-кадр маникюра и ногтевого покрытия" fetchpriority="high"></div>
           <div class="art-label glass"><div class="small">Фокус работы</div><div class="large">Точность без лишнего</div></div>
           <div class="art-index">ПЕДИКЮР / ОБУЧЕНИЕ / 2026</div>
         </div>
@@ -263,10 +371,10 @@
           <p>Макро-галерея задаёт визуальный формат портфолио. Для публикации замените демонстрационные изображения на реальные работы Татьяны и учеников.</p>
         </div>
         <div class="gallery-grid">
-          <a class="gallery-item reveal" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Смотреть реальные работы в Instagram"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1000&q=85" alt="Крупный план аккуратного ногтевого покрытия" loading="lazy"><div class="gallery-caption"><div><strong>Контроль формы</strong><span>Техника · визуальный референс</span></div><span class="view">↗</span></div></a>
-          <a class="gallery-item reveal delay-1" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Открыть Instagram Татьяны"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=800&q=85" alt="Деталь ногтевого сервиса" loading="lazy"><div class="gallery-caption"><div><strong>Чистота деталей</strong><span>Техника · визуальный референс</span></div><span class="view">↗</span></div></a>
-          <a class="gallery-item reveal delay-2" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Открыть Instagram Татьяны"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=85" alt="Работа с ногтями и инструментами" loading="lazy"><div class="gallery-caption"><div><strong>Рабочая точность</strong><span>Процесс · визуальный референс</span></div><span class="view">↗</span></div></a>
-          <a class="gallery-item reveal delay-1" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Смотреть портфолио в Instagram"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1300&q=85" alt="Макро-кадр маникюра для визуальной подборки" loading="lazy"><div class="gallery-caption"><div><strong>Отработка техники</strong><span>Практика · визуальный референс</span></div><span class="view">↗</span></div></a>
+          <a class="gallery-item reveal" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Смотреть реальные работы в Instagram"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=900&q=80" alt="Крупный план аккуратного ногтевого покрытия" loading="lazy" decoding="async"><div class="gallery-caption"><div><strong>Контроль формы</strong><span>Техника · визуальный референс</span></div><span class="view">↗</span></div></a>
+          <a class="gallery-item reveal delay-1" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Открыть Instagram Татьяны"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=760&q=80" alt="Деталь ногтевого сервиса" loading="lazy" decoding="async"><div class="gallery-caption"><div><strong>Чистота деталей</strong><span>Техника · визуальный референс</span></div><span class="view">↗</span></div></a>
+          <a class="gallery-item reveal delay-2" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Открыть Instagram Татьяны"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=760&q=80" alt="Работа с ногтями и инструментами" loading="lazy" decoding="async"><div class="gallery-caption"><div><strong>Рабочая точность</strong><span>Процесс · визуальный референс</span></div><span class="view">↗</span></div></a>
+          <a class="gallery-item reveal delay-1" href="https://www.instagram.com/tatyana_verg/" target="_blank" rel="noopener noreferrer" aria-label="Смотреть портфолио в Instagram"><img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?auto=format&fit=crop&w=1100&q=80" alt="Макро-кадр маникюра для визуальной подборки" loading="lazy" decoding="async"><div class="gallery-caption"><div><strong>Отработка техники</strong><span>Практика · визуальный референс</span></div><span class="view">↗</span></div></a>
         </div>
         <p class="gallery-note">* На текущем макете используются демонстрационные изображения. Не выдавайте их за реальные работы учениц: замените галерею перед рекламным запуском.</p>
       </div>
@@ -319,6 +427,47 @@
         revealItems.forEach(item => observer.observe(item));
       } else {
         revealItems.forEach(item => item.classList.add('is-visible'));
+      }
+
+      const ambient = document.querySelector('.ambient');
+      const setMotionPaused = () => {
+        if (ambient) ambient.style.setProperty('--geo-play', document.hidden || reducedMotion ? 'paused' : 'running');
+      };
+      document.addEventListener('visibilitychange', setMotionPaused);
+      setMotionPaused();
+
+      const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducedMotion;
+      if (canTilt) {
+        document.querySelectorAll('.proof-card, .program-card').forEach(card => {
+          let frame = 0;
+          card.addEventListener('pointermove', event => {
+            if (frame) cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(() => {
+              const rect = card.getBoundingClientRect();
+              const x = (event.clientX - rect.left) / rect.width - .5;
+              const y = (event.clientY - rect.top) / rect.height - .5;
+              card.style.setProperty('--rx', (y * -3.5).toFixed(2) + 'deg');
+              card.style.setProperty('--ry', (x * 4.5).toFixed(2) + 'deg');
+            });
+          }, { passive: true });
+          card.addEventListener('pointerleave', () => {
+            card.style.removeProperty('--rx');
+            card.style.removeProperty('--ry');
+          }, { passive: true });
+        });
+        const heroArt = document.querySelector('.hero-art');
+        const heroImage = heroArt?.querySelector('.hero-photo img');
+        heroArt?.addEventListener('pointermove', event => {
+          const rect = heroArt.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - .5;
+          const y = (event.clientY - rect.top) / rect.height - .5;
+          heroImage?.style.setProperty('--img-x', (x * -10).toFixed(1) + 'px');
+          heroImage?.style.setProperty('--img-y', (y * -10).toFixed(1) + 'px');
+        }, { passive: true });
+        heroArt?.addEventListener('pointerleave', () => {
+          heroImage?.style.setProperty('--img-x', '0px');
+          heroImage?.style.setProperty('--img-y', '0px');
+        }, { passive: true });
       }
 
       const menuToggle = document.querySelector('.menu-toggle');
